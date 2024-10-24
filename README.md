@@ -4,7 +4,7 @@
 https://symfony.com/doc/5.4/index.html
 
 ## Install
-Clone project from GitHub open Laragoons terminal "cd <folder>" and run "composer install"  
+Clone project from GitHub open Laragoons terminal "cd symfony-demo-app" and run "composer install"  
 After its installed you need to setup DB variables in .env file and run  
 "php bin/console make:migration" 
 Double check the new migration "migrations/Version*******.php" and run "php bin/console doctrine:migrations:migrate"
