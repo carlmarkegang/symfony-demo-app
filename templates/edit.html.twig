@@ -1,0 +1,48 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+<div>
+    
+    {% for WebpageText in WebpageTexts %}
+    <div class="webpagetext_edit">
+    <span class="webpagetext_edit_name">{{ WebpageText.name }}</span>
+    <span class="webpagetext_edit_text">{{ WebpageText.text }}</span>
+    </div>
+    {% endfor %}
+    <script>
+    $(".webpagetext_edit").on( "click", function() {
+        $("#webpagetext_name").val($(this).find(".webpagetext_edit_name").html());
+        $("#webpagetext_name_display").html($(this).find(".webpagetext_edit_name").html());
+        $("#webpagetext_text").val($(this).find(".webpagetext_edit_text").html());
+        $("#edit_modal").css("display","block")
+        $(".webpagetext_edit").css("display","none")
+    });
+    </script>
+    <div id="edit_modal">
+        <form method="POST">
+        <h3>Du redigerar</h3>
+        <strong id="webpagetext_name_display"></strong>
+        <div><input type="hidden" name="webpagetext_name" id="webpagetext_name"></div>
+        <textarea name="webpagetext_text" id="webpagetext_text"></textarea>
+        <div>
+        <input type="submit" value="Spara">
+        </div>
+        </form>
+    </div>
+    <style>
+    #edit_modal{
+        display:none;
+    }
+
+    .webpagetext_edit_name{
+        font-weight:bold;
+        cursor:pointer;
+    }
+
+    #webpagetext_text{
+    width: 460px;
+    height: 150px;
+    }
+    </style>
+</div>
+{% endblock %}

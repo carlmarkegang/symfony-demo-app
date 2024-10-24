@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if username != "" %}
+    <p>Logged in as {{username}}</p>
+    <h2><a href="/addnewtext">Lägg till text</a><br></h2>
+    <h2><a href="/edit">Redigera text</a><br><br></h2>
+
+    <h2><a href="/register">Ny användare</a></h2>
+    <h2><a href="/logout">Logga ut</a></h2>
+    {% else %}
+        <form action="{{ path('app_login') }}" method="post">
+        <label for="username">Email:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password">
+
+        <button type="submit">login</button>
+    </form>
+    {% endif %}
+
+{% endblock %}

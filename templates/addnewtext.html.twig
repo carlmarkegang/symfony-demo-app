@@ -1,0 +1,21 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+<div>
+    
+    {% for WebpageText in WebpageTexts %}
+    <div>{{ WebpageText.name }} | {{ WebpageText.text }}</div>
+    {% endfor %}
+    <br>
+    <form method="POST">
+    Namn:<br>
+    <input type="text" name="webpagetext_name">
+    <br>
+    Text:<br>
+    <textarea name="webpagetext_text"></textarea>
+    <div>
+    <input type="submit"  value="Spara">
+    </div>
+    </form>
+</div>
+{% endblock %}

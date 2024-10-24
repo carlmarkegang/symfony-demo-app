@@ -1,0 +1,18 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+<div>
+    <div style="text-align:center;">
+    <h1>{{ WebpageTexts_array["homepage_title"] }}</h1>
+    </div>
+
+
+<div style="display: grid;justify-content: space-between;grid-template-columns: 50% 50%;background-color:#d3cfca;">
+    <img src="/img/demo1.png" style="width: 100%;">
+    <div style="display: flex;justify-content: center;align-items: center;"><h1>{{ WebpageTexts_array["visit_us"] }}</h1></div>
+</div>
+
+<h2><a href="/login">Administrera</a></h2>
+    
+</div>
+{% endblock %}

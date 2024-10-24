@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Title{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="icon" href="">
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+           
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <div id="mainwrap">
+        <nav style="display: grid;justify-content: space-between;grid-template-columns: auto auto auto;align-items: center;border-bottom: 1px solid black;padding: 20px 0px;margin-bottom:20px;">
+        <div>
+        <a href="/"><img src="/img/logo.png" style="width: 170px;"></a>
+        </div>
+        <div style="display: flex;gap: 40px;">
+            <div><h3><a href="/">Produkter</a></h3></div>
+            <div><h3><a href="/">Om oss</a></h3></div>
+            <div><h3><a href="/">Kontakta oss</a></h3></div>
+            <div><h3><a href="/">Ladda ner</a></h3></div>
+        </div>
+        <div>
+            <div>Sök</div>
+        </div>
+        </nav>
+        {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

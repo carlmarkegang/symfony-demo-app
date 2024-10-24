@@ -1,0 +1,13 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+}
+
+#mainwrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  color:inherit;
+}
